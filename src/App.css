@@ -19,3 +19,35 @@
     margin-top: 0;
 }
 
+.topic-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+button {
+    padding: 10px 14px;
+    font: inherit;
+    color: white;
+    background-color: #46516a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a6b85;
+}
+
+button:focus-visible{
+    outline: 3px solid #5a6b85;
+    outline-offset: 2px;
+}
+
+.delete-button {
+    background-color: #b00020;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}

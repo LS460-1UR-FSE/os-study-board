@@ -1,6 +1,6 @@
 import StudyItem from "./StudyItem";
 
-function StudyList({ topics }) {
+function StudyList({ topics, onToggle, onDelete }) { // receives the topics array and the onToggle and onDelete functions as props from the parent component
   return (
    <section>
     <h2>Study Topics</h2>
