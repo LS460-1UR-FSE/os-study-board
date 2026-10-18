@@ -1,0 +1,21 @@
+.study-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px),1fr));
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.study-item{
+  padding: 20px;
+  background-color: #222938;
+  border: 1px solid #46516a;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.study-item h3{
+
+    margin-top: 0;
+}
+
