@@ -51,3 +51,34 @@ button:focus-visible{
 .delete-button:hover {
     background-color: #c62828;
 }
+
+.study-form {
+    margin-bottom: 32px;
+    padding: 20px;
+    background-color: #222938;
+    border: 1px solid #46516a;
+    border-radius: 8px;
+}
+
+.study-form h2{
+    margin-top: 0;
+}
+
+.study-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.study-form input, .study-form select {
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #46516a;
+    border-radius: 5px;
+    background-color: #1e2533;
+    color: white;
+}
+
+.study-form button {
+    align-self: flex-start;
+}

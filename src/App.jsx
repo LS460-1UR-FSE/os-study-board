@@ -4,6 +4,8 @@ import {useState} from 'react'; // importing the useState hook from React
 import Header from './components/layout/header.jsx'; //importing the Header component from the specified path
 import './App.css'; // importing the CSS file for styling the App component
 import StudyList from './components/dashboard/StudyList.jsx'; // importing the StudyList component from the specified path
+import StudyForm from './components/dashboard/StudyForm.jsx'; // importing the StudyForm component from the specified path
+
 
 function App() {
 
