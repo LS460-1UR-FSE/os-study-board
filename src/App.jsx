@@ -49,13 +49,13 @@ function toggleTopic(id){
   );
 }
 
-function deleteTopic(id) {
+function deleteTopic(id) { //delete topic with the given id from the topics array
   setTopics((currentTopics) =>
     currentTopics.filter((topic) => topic.id !== id)
   );
 }
 
-function addTopic(title, category) {
+function addTopic(title, category) { //add new topic to the topics array
   const newTopic = {
     id: crypto.randomUUID(),
     title: title,
