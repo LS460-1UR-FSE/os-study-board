@@ -5,7 +5,7 @@ import Header from './components/layout/header.jsx'; //importing the Header comp
 import './App.css'; // importing the CSS file for styling the App component
 import StudyList from './components/dashboard/StudyList.jsx'; // importing the StudyList component from the specified path
 import StudyForm from './components/dashboard/StudyForm.jsx'; // importing the StudyForm component from the specified path
-import About from './components/layout/About.jsx'; // importing the About component from the specified path
+import About from './components/About.jsx'; // importing the About component from the specified path
 import ViewSwitcher from './components/layout/ViewSwitcher.jsx'; // importing the ViewSwitcher component from the specified path
 
 
@@ -55,6 +55,16 @@ function deleteTopic(id) {
   );
 }
 
+function addTopic(title, category) {
+  const newTopic = {
+    id: crypto.randomUUID(),
+    title: title,
+    category: category,
+    completed: false,
+  };
+
+  setTopics((currentTopics) => [...currentTopics, newTopic]);
+}
 
 
 
