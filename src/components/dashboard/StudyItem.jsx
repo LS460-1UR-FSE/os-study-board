@@ -1,27 +1,29 @@
-function StudyItem({topic}) { // displays the study topic received from the parent component through props
+function StudyItem({ topic, onToggle, onDelete }) {
   return (
-   <li className="study-item">
+    <li className="study-item">
       <h3>{topic.title}</h3>
       <p>Category: {topic.category}</p>
-      <p>Status: {topic.completed ? 'Completed' : 'In Progress'}</p>
+      <p>Status: {topic.completed ? 'Completed' : 'Not completed'}</p>
 
-      <div className= 'Topic Actions'>
+      <div className="topic-actions">
+        {/* Send this topic's ID to the parent's toggle function. */}
         <button
-            type="button"
-            aria-pressed={topic.completed}
-            onClick={() => onToggle(topic.id)}
+          type="button"
+          aria-pressed={topic.completed}
+          onClick={() => onToggle(topic.id)}
         >
-            {topic.completed ? 'Mark as In Progress' : 'Mark as Completed'}
+          {topic.completed ? 'Mark incomplete' : 'Mark complete'}
         </button>
 
+        {/* Send this topic's ID to the parent's delete function. */}
         <button
-            type="button"
-            className="delete-button"
-            onClick={() => onDelete(topic.id)}
+          type="button"
+          className="delete-button"
+          onClick={() => onDelete(topic.id)}
         >
-            Delete
+          Delete
         </button>
-     </div>
+      </div>
     </li>
   );
 }
