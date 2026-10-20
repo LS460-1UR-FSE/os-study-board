@@ -82,3 +82,16 @@ button:focus-visible{
 .study-form button {
     align-self: flex-start;
 }
+
+.view-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Highlight the button for the selected view. */
+.view-switcher button[aria-pressed='true'] {
+  background-color: #eeeeee;
+  color: #151923;
+}

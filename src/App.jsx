@@ -5,9 +5,15 @@ import Header from './components/layout/header.jsx'; //importing the Header comp
 import './App.css'; // importing the CSS file for styling the App component
 import StudyList from './components/dashboard/StudyList.jsx'; // importing the StudyList component from the specified path
 import StudyForm from './components/dashboard/StudyForm.jsx'; // importing the StudyForm component from the specified path
+import About from './components/layout/About.jsx'; // importing the About component from the specified path
+import ViewSwitcher from './components/layout/ViewSwitcher.jsx'; // importing the ViewSwitcher component from the specified path
 
 
 function App() {
+
+
+const [activeView, setActiveView] = useState('dashboard'); //track view state, default is dashboard
+
 
 //topics holds array
 // setTopics lets us update the topics array when topics change
@@ -56,13 +62,24 @@ function deleteTopic(id) {
     <div className="App">
       <Header title="OS Study Board" /> {/* Using the Header component and passing the title prop */}
       {/* Other components and content can be added here */}
-    
+
+      <ViewSwitcher activeView={activeView} onViewChange={setActiveView} /> {/* Using the ViewSwitcher component and passing the activeView state and setActiveView function as props */}
+
+
       <main> 
-        <StudyList 
-          topics={topics}         
-          onToggle={toggleTopic}
-          onDelete={deleteTopic}
-        /> {/* Using the StudyList component and passing the topics state as a prop */}
+        {activeView === 'dashboard' ? (
+          <>
+            <StudyForm onAdd={addTopic} />
+
+          <StudyList 
+              topics={topics}         
+              onToggle={toggleTopic}
+              onDelete={deleteTopic}
+          /> 
+        </>
+        ) : (
+          <About /> 
+        )}  
       </main>
     </div>
   );
